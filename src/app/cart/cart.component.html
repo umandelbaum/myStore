@@ -1,0 +1,5 @@
+Cart:
+<ul *ngFor="let product of productsInOrder">
+	<li>Product: {{product.id}}</li>
+	<li>Quantity: {{order.orderedProducts.get(product.id)}}</li>
+</ul>

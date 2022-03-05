@@ -10,6 +10,10 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductListItemComponent } from './product-list-item/product-list-item.component';
 import { ProductItemDetailComponent } from './product-item-detail/product-item-detail.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatSelectModule} from '@angular/material/select';
+import { CartComponent } from './cart/cart.component';
+
 
 @NgModule({
   declarations: [
@@ -17,14 +21,17 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
     ProductListComponent,
     ProductListItemComponent,
     ProductItemDetailComponent,
-    NavBarComponent
+    NavBarComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

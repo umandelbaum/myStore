@@ -8,31 +8,21 @@ import { Product } from '../model/productModel';
   styleUrls: ['./product-list-item.component.css']
 })
 export class ProductListItemComponent implements OnInit {
-  @Input() product:Product;
-  orderedProduct: orderedProduct;
-  @Output() alterOrder: EventEmitter<orderedProduct> = new EventEmitter;
+  @Input() product:Product = new Product();
+  quantity: number = 1;  
+  @Output() orderUpdate: EventEmitter<orderedProduct> = new EventEmitter;
 
-  constructor() { 
-    this.product = {
-      id: 1,
-      name: '',
-      price: 0,
-      url: '',
-      description: ''
-    }
-    this.orderedProduct = {
-      id: 1,
-      quantity: 0
-    }
-  }
+  constructor() {  }
 
-  ngOnInit(): void { 
-    this.orderedProduct.id = this.product.id;
-  }
+  ngOnInit(): void { }
 
-  addToOrder(quantity:number){
-    this.orderedProduct.quantity = quantity;
-    this.alterOrder.emit(this.orderedProduct);
+  addToOrder():void{
+    const update:orderedProduct = {
+      id: this.product.id,
+      quantity: this.quantity
+    }    
+    this.orderUpdate.emit(update);
+    this.quantity = 1;
   }
 
 }
