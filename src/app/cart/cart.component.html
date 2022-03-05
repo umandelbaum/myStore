@@ -1,5 +1,7 @@
-Cart:
-<ul *ngFor="let product of productsInOrder">
-	<li>Product: {{product.id}}</li>
-	<li>Quantity: {{order.orderedProducts.get(product.id)}}</li>
-</ul>
+<div class="empty-cart-message" *ngIf="order.orderedProducts.size == 0">Your cart is empty</div>
+
+<div class="cart-panel" *ngIf="order.orderedProducts.size != 0">	
+	<app-cart-item class="cart-item" *ngFor="let product of productsInOrder" [product]="product" [quantity]="order.orderedProducts.get(product.id)" (setOrderQuantity)="changeOrder($event)">		
+	</app-cart-item>
+	<h1>Total: ${{total}}</h1>	
+</div>

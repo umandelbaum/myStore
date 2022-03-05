@@ -19,7 +19,7 @@ export class OrderService {
   updateOrder(update: orderedProduct):Order{
     if (update.quantity <= 0) { //First check for removal
       if (this.order.orderedProducts.has(update.id)) { //And only remove if it exists
-        this.order.orderedProducts.delete(update.id);
+        this.order.orderedProducts.delete(update.id);       
       }
     } else { //If not remove, then just update
       this.order.orderedProducts.set(update.id,update.quantity);
@@ -33,7 +33,7 @@ export class OrderService {
                           + update.quantity;
       this.order.orderedProducts.set(update.id, newQuantity);
     } else {
-      this.order.orderedProducts.set(update.id,update.quantity);
+      this.order.orderedProducts.set(update.id,update.quantity);      
     }
     return this.order;
   }

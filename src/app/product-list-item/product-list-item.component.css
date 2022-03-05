@@ -20,3 +20,10 @@
 	width: 108px; 
 	margin-bottom: 8px;
   }
+
+  .mat-select {
+    border: 1px solid black !important ;
+    background: black;
+    height: 30px !important;
+	width: 30px;
+}

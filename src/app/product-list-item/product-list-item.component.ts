@@ -9,20 +9,20 @@ import { Product } from '../model/productModel';
 })
 export class ProductListItemComponent implements OnInit {
   @Input() product:Product = new Product();
-  quantity: number = 1;  
-  @Output() orderUpdate: EventEmitter<orderedProduct> = new EventEmitter;
+  quantity: string = '1';  
+  @Output() addToOrder: EventEmitter<orderedProduct> = new EventEmitter;
 
   constructor() {  }
 
   ngOnInit(): void { }
 
-  addToOrder():void{
+  addOrder():void{
     const update:orderedProduct = {
       id: this.product.id,
-      quantity: this.quantity
+      quantity: parseInt(this.quantity)
     }    
-    this.orderUpdate.emit(update);
-    this.quantity = 1;
+    this.addToOrder.emit(update);
+    this.quantity = '1';
   }
 
 }

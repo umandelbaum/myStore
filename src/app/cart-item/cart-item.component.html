@@ -1,0 +1,11 @@
+<div class="cart-item">  		
+	<img src={{product.url}}>
+	<div class="cart-item-details">
+		<p>{{product.name}} </p>
+		<p>${{product.price}} </p>
+		<form class="number-input">
+			Amount: <input type="number" value="{{quantity}}" [(ngModel)]="quantity" (ngModelChange)="changeOrder()" max="100">
+		</form>
+	</div>
+	<br>
+</div>

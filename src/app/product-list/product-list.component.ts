@@ -26,7 +26,7 @@ export class ProductListComponent implements OnInit {
 
   addToOrder(update:orderedProduct) {
     this.orderService.addToOrder(update);
-    alert("Added to cart");
+    alert("Added to cart: ID: " + update.id + " Quantity: " + update.quantity);
   }
 
 }
