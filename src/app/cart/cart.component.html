@@ -4,7 +4,7 @@
 	<div class="cart-panel">
 		<app-cart-item *ngFor="let product of productsInOrder" [product]="product" [quantity]="order.orderedProducts.get(product.id)" (setOrderQuantity)="changeOrder($event)">		
 		</app-cart-item>
-		<h1>Total:  </h1>	
+		<h1>Total: ${{total | number:'1.2-2'}} </h1>	
 	</div>
 	<div class="cart-panel">
 		<form #form="ngForm" (ngSubmit)="submitUser()">		
