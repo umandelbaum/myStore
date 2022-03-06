@@ -27,4 +27,13 @@ export class CartItemComponent implements OnInit {
       alert("Item removed");
     }
   }
+
+  removeOrder():void{
+    const update:orderedProduct = {
+      id: this.product.id,
+      quantity: 0
+    };
+    this.setOrderQuantity.emit(update);
+    alert("Item removed");
+  }
 }
