@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatSelectModule} from '@angular/material/select';
 import { CartComponent } from './cart/cart.component';
 import { CartItemComponent } from './cart-item/cart-item.component';
+import { ConfirmationComponent } from './confirmation/confirmation.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { CartItemComponent } from './cart-item/cart-item.component';
     ProductItemDetailComponent,
     NavBarComponent,
     CartComponent,
-    CartItemComponent
+    CartItemComponent,
+    ConfirmationComponent
   ],
   imports: [
     BrowserModule,

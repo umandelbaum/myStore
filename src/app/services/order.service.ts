@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Order } from '../model/orderModel';
 import { orderedProduct } from '../model/orderedProduct';
-import {MatSelectModule} from '@angular/material/select';
 
 @Injectable({
   providedIn: 'root'

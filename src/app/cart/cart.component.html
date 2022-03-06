@@ -1,7 +1,21 @@
 <div class="empty-cart-message" *ngIf="order.orderedProducts.size == 0">Your cart is empty</div>
 
-<div class="cart-panel" *ngIf="order.orderedProducts.size != 0">	
-	<app-cart-item class="cart-item" *ngFor="let product of productsInOrder" [product]="product" [quantity]="order.orderedProducts.get(product.id)" (setOrderQuantity)="changeOrder($event)">		
-	</app-cart-item>
-	<h1>Total: ${{total | number:'1.2-2'}}</h1>	
+<div class="cart-container" *ngIf="order.orderedProducts.size != 0">	
+	<div class="cart-panel">
+		<app-cart-item *ngFor="let product of productsInOrder" [product]="product" [quantity]="order.orderedProducts.get(product.id)" (setOrderQuantity)="changeOrder($event)">		
+		</app-cart-item>
+		<h1>Total: ${{total | number:'1.2-2'}}</h1>	
+	</div>
+	<div class="cart-panel">
+		<form #form="ngForm" (ngSubmit)="submitUser()">		
+			Full name <br>
+			<input type="text" name="name" required minlength="1" [(ngModel)]="user.name" placeholder="(minimum 1 character)">
+			<br> Address <br>
+			<input type="text" name="address" required minlength="6" [(ngModel)]="user.address" placeholder="(minimum 6 characters)">
+			<br> Credit Card Number <br>
+			<input type="text" name="ccnum" required pattern="(\d{4}(\s|\-)?){3}\d{4}" [(ngModel)]="user.ccnum" placeholder="16 digit number">
+			<br> <small>We'll never share your payment details with anyone else.</small> <br>
+			<button type="submit" class="btn btn-primary" [disabled]="form.invalid">Submit</button>
+		  </form>
+	</div>
 </div>

@@ -28,7 +28,12 @@ export class ProductItemDetailComponent implements OnInit {
   ngOnInit(): void {
     this.id = parseInt(this.router.url.split('/')[2]);
     this.productService.getProducts().subscribe((res):void => {      
-      this.product = res.filter(p => p.id == this.id)[0];
+      const matchingProducts = res.filter(p => p.id == this.id);
+      if (matchingProducts.length == 0) { //If there is no match, route back to index
+        this.router.navigateByUrl('/');
+      } else {
+        this.product=matchingProducts[0];
+      }
     });
   }
 
