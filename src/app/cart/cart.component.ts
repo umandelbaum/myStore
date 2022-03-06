@@ -31,6 +31,9 @@ export class CartComponent implements OnInit {
 
   changeOrder(update:orderedProduct):void{    
     this.orderService.updateOrder(update);
+    if(update.quantity<=0){
+      this.productsInOrder = this.productsInOrder.filter(p => p.id != update.id);
+    }
     this.calculateTotal();
   }
 
@@ -40,8 +43,7 @@ export class CartComponent implements OnInit {
       const element = this.productsInOrder[index];
       const quantity = this.order.orderedProducts.get(element.id) as number;      
       this.total = this.total + (element.price*quantity);
-    }
-    //alert(this.total)
+    }    
   }
 
 }

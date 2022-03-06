@@ -4,7 +4,7 @@
 		<p>{{product.name}} </p>
 		<p>${{product.price}} </p>
 		<form class="number-input">
-			Amount: <input type="number" value="{{quantity}}" [(ngModel)]="quantity" (ngModelChange)="changeOrder()" max="100">
+			Amount: <input type="number" name="amount" value="{{quantity}}" [(ngModel)]="quantity" (ngModelChange)="changeOrder()" min="0"/>
 		</form>
 	</div>
 	<br>

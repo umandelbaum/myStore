@@ -17,8 +17,7 @@ export class CartItemComponent implements OnInit {
 
   ngOnInit(): void { }
 
-  changeOrder():void{
-    alert('change');
+  changeOrder():void{    
     const update:orderedProduct = {
       id: this.product.id,
       quantity: this.quantity as number

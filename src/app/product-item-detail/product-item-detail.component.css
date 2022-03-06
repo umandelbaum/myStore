@@ -23,3 +23,10 @@ img {
   .back-link {
 	margin-top: 8px;
   }
+
+  .mat-select {
+    border: 1px solid black !important ;
+    background: black;
+    height: 30px !important;
+	width: 30px;
+}
